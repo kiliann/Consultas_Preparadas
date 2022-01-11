@@ -1,4 +1,4 @@
-<?php
++<?php
 /*
  * @author Kilian Benavente Ortega
  * Apuntes de consultas preparadas
