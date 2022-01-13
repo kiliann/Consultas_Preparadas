@@ -1,22 +1,24 @@
 <?php
 require_once "Conexion.php";
+
+include "configuracionBD.php";
     class insercionMasiva extends Conexion {
 
         public function __construct()
         {
-            include "configuracionBD.php";
+
             $this->mysqli = new mysqli(SERVIDOR,USUARIO, PASSWORD, DB);
 
-            //$this->conexion = $this->inicio();
+            //$this->mysquli = $this->inicio();
         }
 
 
 
         function insertar(){
             $juegos = array(
-                array('juego' => "juego4", 'direccion'=>"url3"),
-                array('juego' => "juego5", 'direccion'=>"url2"),
-                array('juego' => "juego6", 'direccion'=>"url1")
+                array('juego' => "juego1", 'direccion'=>"url3"),
+                array('juego' => "juego2", 'direccion'=>"url2"),
+                array('juego' => "juego3", 'direccion'=>"url1")
         );
             $consulta = "Insert into minijuegos(nombre, url) value (?,?)";
 
@@ -34,12 +36,15 @@ require_once "Conexion.php";
             }else{
                 echo "realizo Corectamente";
             }*/
-
+            $va = array('juego' => '', 'direccion'=>'');
+            if(!$sentencia->bind_param("ss", $va['juego'], $va['direccion'])) {
+                echo "Fallo en la vinculacion de parametros";
+            }
             foreach ($juegos as $valor) {
                 //echo $valor['juego']." ";
                 //echo $valor['direccion']." ";
-                if(!$sentencia->bind_param("ss", $valor['juego'], $valor['direccion'])) {
-                    echo "Fallo en la vinculacion de parametros";
+                foreach($valor as $k=>$v) {
+                    $va[$k] = $v;
                 }
                 if(!$sentencia->execute()){
                     echo "Algo fallo en la ejecucion";
