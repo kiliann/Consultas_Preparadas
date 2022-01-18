@@ -1,14 +1,14 @@
 <?php
 include "configuracionBD.php";
 class Conexion{
-
+    private $mysqli;
 
     public function inicio() {
 
 
 
 
-        $this->mysqli = new mysqli(SERVIDOR,USUARIO, PASSWORD, DB);
+        return $this->mysqli = new mysqli(SERVIDOR,USUARIO, PASSWORD, DB);
     }
     public function consultas($consulta){
 

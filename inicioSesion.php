@@ -23,26 +23,13 @@
                 <button class="btn-superior" onclick="registro()">Registro</button>
             </div>
 
-            <form id="login" class="input-grupo">
-                <input type="text" class="input-registro" placeholder="Correo" required>
-                <input type="password" class="input-registro" placeholder="Introducir Contraseña" required>
+            <form id="login" class="input-grupo" method="post" action="sesion.php">
+                <input name="correo" type="text" class="input-registro" placeholder="Correo" required>
+                <input name="pass" type="password" class="input-registro" placeholder="Introducir Contraseña" required>
 
                 <button type="submit" class="submit-btn">Entrar</button>
             </form>
-          <!--  <form id="registro"  class="input-grupo" >
 
-                <input name="nombre" type="text" class="input-registro" placeholder="Nombre">
-
-                <input name="correo" type="text" class="input-registro" placeholder="Correo Electronico">
-
-                <input name="password" type="password" class="input-registro" placeholder="Contraseña">
-
-                <input name="rpassword" type="password" class="input-registro" placeholder="Contraseña">
-                <label>Videojuego que prefieres</label><br/>
-
-                <button name="enviar" type="submit" class="submit-btn" value="Enviar">Enviar</button>
-
-                </form> -->
         </div>
     </div>
 
