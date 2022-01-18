@@ -1,9 +1,9 @@
 <?php
-    include "configuracionBD.php";
+include "configuracionBD.php";
 class Conexion{
 
 
-    function inicio() {
+    public function inicio() {
 
 
 

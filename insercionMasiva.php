@@ -9,7 +9,7 @@ include "configuracionBD.php";
 
             $this->mysqli = new mysqli(SERVIDOR,USUARIO, PASSWORD, DB);
 
-            //$this->mysquli = $this->inicio();
+            //$this->mysqli = $this->inicio();
         }
 
 
