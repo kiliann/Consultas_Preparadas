@@ -37,6 +37,7 @@ class SelecionDeDatos extends Conexion {
             echo $fila['correo'];
             echo $fila['contrasena'];
             if($fila['contrasena'] == $password){
+                session_start();
                 $_SESSION['usurio']= $fila['correo'];
             }
         }
